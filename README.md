@@ -20,7 +20,7 @@ python run.py --refresh    # re-fetch the season (~8 min, rate limited)
 python -m pytest tests/    # 36 tests
 ```
 
-Output: `out/report.html`, self-contained, charts inlined.
+Output: `out/report.pdf`, a printable report composed in matplotlib.
 
 ---
 
@@ -366,7 +366,8 @@ src/
   model.py      within estimator, cluster-robust errors, Huber variant,
                 the naive estimator, and the simulation that validates them
   charts.py     nine figures
-  report.py     one self-contained HTML file
+  report.py     the printable PDF report
+  paper.py      A4 page composition
 tests/
   test_degradation.py   36 tests, anchored on algebra and known truths
 data/

@@ -278,7 +278,7 @@ def main() -> int:
                                               out_dir),
     }
 
-    html = report.build(
+    report_path = report.build(
         census=census, share=share, stint_counts=counts, fitted=fitted,
         robust=robust, naive=naive, quadratic=quadratic, fwl_gap=gap,
         recovery_rows=recovery_rows, circuit_rows=circuit_rows,
@@ -288,9 +288,9 @@ def main() -> int:
                  for key, value in sorted(spreads.items(),
                                           key=lambda item: -item[1])],
         condition_cut=stints.CONDITION_SPREAD_MAX,
-        out_path=out_dir / "report.html")
+        out_path=out_dir / "report.pdf")
 
-    print(f"\nreport  {html}")
+    print(f"\nreport  {report_path}")
     for path in figures.values():
         print(f"figure  {path}")
     return 0
